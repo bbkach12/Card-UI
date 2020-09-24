@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sample Landing Page </title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 30px;
+
+        }
+
+        .container .box {
+            height: 400px;
+            box-shadow: 0 15px 20px rgba(0, 0, 0, .2);
+            background-position: top;
+            transition: ease-in-out 4s;
+        }
+
+        .container .box.img1 {
+            background: url('./img1.jpg');
+            background-size: cover;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .container .box.img2 {
+            background: url('./img2.jpg');
+            background-size: cover;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .container .box:hover {
+            background-position: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box img1"></div>
+        <div class="box img2"></div>
+    </div>
+
+</body>
+
+</html>

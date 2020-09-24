@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image reveal Animations</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .box .imgBx {
+            width: 600px;
+            height: 400px;
+            background: #000;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: reveal 1s ease-in-out forwards;
+        }
+
+        .box .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .box .imgBx::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 1;
+            transform-origin: right;
+            animation: reveal 1s ease-in-out forwards;
+            animation-delay: 3s;
+        }
+
+        .box .imgBx h2 {
+            position: absolute;
+            right: -80px;
+            bottom: 40px;
+            padding: 10px;
+            background: #fff;
+            z-index: 2;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: reveal 1s ease-in-out forwards;
+            animation-delay: 1s;
+            transition: bottom .5s;
+        }
+
+        .box .imgBx h2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 1;
+            transform-origin: right;
+            animation: reveal 1s ease-in-out reverse forwards;
+            animation-delay: 2s;
+        }
+
+        @keyframes reveal {
+            0% {
+                transform: scaleX(0);
+            }
+
+            100% {
+                transform: scaleX(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="imgBx"><img src="./bg1.jpg" alt="Image couldn't load !">
+            <h2>
+                Image Reveal Animation Effects..
+
+            </h2>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card clippath hover effect animation</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .container .box {
+            position: relative;
+            width: 280px;
+            height: 400px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .container .box .img-box {
+            background: #000;
+            clip-path: circle(400px at center 100px);
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+
+        .container .box:hover .img-box {
+            clip-path: circle(80px at center 100px);
+            transition-delay: 0s;
+        }
+
+        .container .box .content {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 55%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container .box .content a {
+            text-decoration: none;
+            background: #000;
+            color: #fff;
+            padding: 5px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .container .box .content a,
+        .container .box .content h2,
+        .container .box .content p {
+            opacity: 0;
+            transition: 0.5s;
+            transform: translateY(20px);
+            margin-bottom: 10px;
+        }
+
+        .container .box:hover .content h2 {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.5s;
+        }
+
+        .container .box:hover .content p {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.7s;
+
+        }
+
+        .container .box:hover .content a {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.9s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- card1 -->
+        <div class="box">
+            <div class="img-box">
+                <img src="./img001.jpg" alt="image">
+            </div>
+            <div class="content">
+                <h2>Title</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ad cupiditate quisquam vero amet
+                    accusantium nihil numquam. Dolorum, voluptatem eum.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <!-- card2 -->
+        <div class="box">
+            <div class="img-box">
+                <img src="./img002.jpg" alt="image">
+            </div>
+            <div class="content">
+                <h2>Title</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ad cupiditate quisquam vero amet
+                    accusantium nihil numquam. Dolorum, voluptatem eum.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <!-- card3--->
+        <div class="box">
+            <div class="img-box">
+                <img src="./img003.jpg" alt="image">
+            </div>
+            <div class="content">
+                <h2>Title</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ad cupiditate quisquam vero amet
+                    accusantium nihil numquam. Dolorum, voluptatem eum.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <!-- card4 -->
+        <div class="box">
+            <div class="img-box">
+                <img src="./img004.jpg" alt="image">
+            </div>
+            <div class="content">
+                <h2>Title</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ad cupiditate quisquam vero amet
+                    accusantium nihil numquam. Dolorum, voluptatem eum.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
